@@ -15,7 +15,7 @@ setup(
      author='Mehmet Gerceker',
      author_email='mehmetg@msn.com',
      url='https://github.com/mehmetg/pytest-browser',
-     # download_url='https://github.com/mehmetg/pytest-browser/tarball/0.1',
+     download_url='https://github.com/mehmetg/pytest-browser/tarball/0.1',
      platforms=['linux', 'macos'],
      packages=['browser'],
      entry_points={'pytest11': [
