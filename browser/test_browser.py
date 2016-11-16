@@ -158,12 +158,10 @@ class FlagTreeWidget(urwid.TreeWidget):
             return
         fixture_data = node.get_value().fixture_data
         if fixture_data:
-            text = json.dumps(fixture_data, indent=2)
+            text = json.dumps(to_dict(fixture_data), indent=2)
         else:
             text = "No fixture information."
-
         self.get_node().detail_display_widget.set_text(text)
-        pass
 
 
 class TestTreeWidget(FlagTreeWidget):
@@ -353,3 +351,26 @@ def build_data_tree(data):
         return tree
     else:
         return None
+
+
+def to_dict(obj, class_key=None):
+    if isinstance(obj, dict):
+        data = {}
+        for (k, v) in obj.items():
+            data[k] = to_dict(v, class_key)
+        return data
+    elif hasattr(obj, "_ast"):
+        return to_dict(obj._ast())
+    elif hasattr(obj, "__iter__"):
+        return [to_dict(v, class_key) for v in obj]
+    elif hasattr(obj, "__dict__"):
+        data = dict([(key, to_dict(value, class_key))
+                     for key, value in obj.__dict__.items() if not callable(value) and not key.startswith('_')])
+        if class_key is not None and hasattr(obj, "__class__"):
+            data[class_key] = obj.__class__.__name__
+        return data
+    else:
+        return obj
+
+
+
