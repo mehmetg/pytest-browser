@@ -21,7 +21,7 @@ Run ``pytest`` with ``--browse`` or the shorthand ``--br``
 Credits
 -------
 
-Many thanks to @tgoodlet's `pytest-interactive`_ for inspiration and borrowed sample test cases.
+Many thanks to `@tgoodlet <https://github.com/tgoodlet>`_'s `pytest-interactive`_ for inspiration and borrowed sample test cases.
 
 
 ..  _pytest-interactive:
