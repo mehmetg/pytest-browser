@@ -261,7 +261,7 @@ class TestBrowser:
         self.topnode = TestContainerNode(self.test_tree,  detail_display_widget=self.detail_text_box)
         self.listbox = urwid.TreeListBox(urwid.TreeWalker(self.topnode))
         self.listbox.offset_rows = 1
-        self.columns = urwid.Columns([('weight', 2, self.listbox), ('weight', 1.3, self.detail_text_box)])
+        self.columns = urwid.Columns([('weight', 3, self.listbox), ('weight', 1, self.detail_text_box)])
         self.header = urwid.Text("")
         self.footer = urwid.AttrWrap(urwid.Text(self.footer_text), 'foot')
         self.view = urwid.Frame(
