@@ -1,7 +1,7 @@
 from __future__ import print_function
 import pytest
 
-from browser.test_browser import TestBrowser
+from browser.pytest_browser import TestBrowser
 
 
 def pytest_addoption(parser):
