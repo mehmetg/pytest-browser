@@ -13,6 +13,7 @@ class TestDetailTextBox(urwid.WidgetWrap):
 
     def set_text(self, text):
         lines = text.split('\n')
+        # noinspection PyTypeChecker
         self.listbox_widget = urwid.ListBox([urwid.Text("")]) if self.listbox_widget is None else self.listbox_widget
         line_widgets = self.listbox_widget.body.contents
         for idx in xrange(len(lines)):
@@ -90,6 +91,7 @@ class FlagTreeWidget(urwid.TreeWidget):
             key = self.unhandled_keys(size, key)
         return key
 
+    # noinspection PyUnusedLocal
     def unhandled_keys(self, size, key):
         """
         Override this method to intercept keystrokes in subclasses.
@@ -360,6 +362,7 @@ def to_dict(obj, class_key=None):
             data[k] = to_dict(v, class_key)
         return data
     elif hasattr(obj, "_ast"):
+        # noinspection PyProtectedMember
         return to_dict(obj._ast())
     elif hasattr(obj, "__iter__"):
         return [to_dict(v, class_key) for v in obj]

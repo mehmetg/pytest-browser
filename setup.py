@@ -29,7 +29,7 @@ setup(
         'Operating System :: Microsoft :: Windows',
         'Operating System :: MacOS :: MacOS X',
         'Topic :: Software Development :: Testing',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python',
         'Environment :: Console',
     ],
     keywords="py.test pytest plugin browse interactive",
