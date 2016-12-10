@@ -5,7 +5,7 @@ with open('README.rst') as f:
 
 setup(
     name="pytest-browser",
-    version='0.1.1',
+    version='0.2.0',
     description='A pytest plugin for console based browser test selection'
                 ' just after the collection phase',
     long_description=readme,
@@ -13,7 +13,7 @@ setup(
     author='Mehmet Gerceker',
     author_email='mehmetg@msn.com',
     url='https://github.com/mehmetg/pytest-browser',
-    download_url='https://github.com/mehmetg/pytest-browser/tarball/0.1',
+    download_url='https://github.com/mehmetg/pytest-browser/archive/0.2.0.tar.gz',
     platforms=['linux', 'macos'],
     packages=['browser'],
     entry_points={'pytest11': [

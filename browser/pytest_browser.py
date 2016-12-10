@@ -159,11 +159,17 @@ class FlagTreeWidget(urwid.TreeWidget):
         if node.detail_display_widget is None:
             return
         fixture_data = node.get_value().fixture_data
+        try:
+            doc_string = node.get_value().raw_data['original_item'].function.__doc__
+        except TypeError or AttributeError:
+            doc_string = None
         if fixture_data:
-            text = json.dumps(to_dict(fixture_data), indent=2)
+            parameters = "Parameters:\n%s" % json.dumps(to_dict(fixture_data), indent=2)
+            if doc_string:
+                parameters = "Description:\n%s\n\n%s" % (doc_string, parameters)
         else:
-            text = "No fixture information."
-        self.get_node().detail_display_widget.set_text(text)
+            parameters = "No fixture information."
+        self.get_node().detail_display_widget.set_text(parameters)
 
 
 class TestTreeWidget(FlagTreeWidget):

@@ -9,6 +9,12 @@ The format is based on `Keep a Changelog`_ and this project adheres to
 .. _Semantic Versioning: http://semver.org/spec/v2.0.0.html
 
 
+0.2.0 - 2016-12-09
+----------------
+Added
+*****
+- Adds docstring for the test item to the detail text box.
+
 0.1.1 - 2016-11-15
 ----------------
 Fixed
